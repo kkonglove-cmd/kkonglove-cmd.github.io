@@ -1,4 +1,4 @@
-"""텍스트만 있는 카드뉴스: 울트라마린 단색 바탕 + 크림 글자, 가운데 정렬.
+"""텍스트만 있는 카드뉴스: 진한 울트라마린(#0B0F7A) 단색 바탕 + 크림 글자, 가운데 정렬.
 슬라이드마다 문단 리스트, 문단 안 줄바꿈은 \\n. [[ ]] 안은 연하늘 강조."""
 import re
 
@@ -32,13 +32,13 @@ open('text.html', 'w').write(f'''<!doctype html><html lang="ko"><head><meta char
 <style>
 * {{ box-sizing: border-box; margin: 0; padding: 0; }}
 body {{ background: #888; }}
-.card {{ width: 1080px; height: 1350px; margin: 0 auto 30px; background: #1117A9; color: #FAF3E6;
+.card {{ width: 1080px; height: 1350px; margin: 0 auto 30px; background: #0B0F7A; color: #FAF3E6;
   display: flex; align-items: center; justify-content: center; position: relative;
   font-family: 'Noto Sans KR', sans-serif; text-align: center; word-break: keep-all; padding: 0 80px; }}
 .txt p {{ font-size: 44px; font-weight: 500; line-height: 1.62; letter-spacing: -0.02em; }}
 .txt p + p {{ margin-top: 44px; }}
 em {{ font-style: normal; color: #B9DCF7; font-weight: 700; }}
-.foot {{ position: absolute; bottom: 64px; left: 0; right: 0; font-size: 24px; font-weight: 500; color: rgba(250,243,230,.45); letter-spacing: .02em; }}
+.foot {{ position: absolute; bottom: 64px; left: 0; right: 0; font-size: 24px; font-weight: 500; color: rgba(250,243,230,.65); letter-spacing: .02em; }}
 </style></head><body>
 {chr(10).join(cards)}
 </body></html>''')
