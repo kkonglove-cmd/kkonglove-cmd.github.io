@@ -71,7 +71,7 @@ for i, s in enumerate(SLIDES, 1):
     cards.append(f'''<section class="card {tone}" id="c{i}">
   <div class="top"><span>TREND KOREA 2027</span><span>{i:02d} / {N:02d}</span></div>
   <div class="txt">{''.join(parts)}</div>
-  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 전미영 연구위원 강연 정리</span></div>
 </section>''')
 
 open('text.html', 'w').write(f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>text cards</title>
