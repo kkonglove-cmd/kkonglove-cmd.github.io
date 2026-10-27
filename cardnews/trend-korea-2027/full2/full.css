@@ -13,9 +13,9 @@ body { background: #999; font-family: 'Noto Sans KR', sans-serif; color: var(--i
 .card > * { position: relative; z-index: 1; }
 .card > .deco { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 
-.top { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 18px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; margin-bottom: 54px; }
+.top { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 20px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; margin-bottom: 54px; }
 .top b { color: var(--blue); font-weight: 600; }
-.foot { margin-top: auto; height: 96px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; font-size: 19px; color: var(--muted); }
+.foot { margin-top: auto; height: 96px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; font-size: 21px; color: var(--muted); }
 .foot span:first-child { font-weight: 700; color: var(--blue); }
 
 .lab { font-family: var(--mono); font-size: 19px; font-weight: 600; color: var(--sky); letter-spacing: 0; margin-bottom: 14px; }
@@ -24,24 +24,24 @@ h1 { font-size: 78px; font-weight: 700; line-height: 1.2; letter-spacing: -.045e
 h1 span, h2 span { color: var(--blue); }
 h1 span { font-size: 120px; }
 h2 { font-size: 60px; font-weight: 700; line-height: 1.28; letter-spacing: -.04em; }
-.def { font-size: 27px; color: var(--muted); line-height: 1.6; margin-top: 18px; }
+.def { font-size: 29px; color: var(--muted); line-height: 1.6; margin-top: 18px; }
 
 /* 키워드 카드 */
 .title { display: flex; align-items: baseline; gap: 22px; font-size: 62px; font-weight: 700; letter-spacing: -.04em; }
 .title em { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 88px; color: var(--blue); letter-spacing: 0; }
 .en { font-family: var(--serif); font-style: italic; font-size: 30px; color: var(--sky); margin-top: 6px; letter-spacing: 0; }
-hr { border: 0; border-top: 1px solid var(--line); margin: 34px 0 30px; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0 26px; }
 h3 { font-size: 38px; font-weight: 700; line-height: 1.4; color: var(--blue); letter-spacing: -.035em; }
-.cases { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; margin-top: 34px; }
-.ph { background: #fff; padding: 10px; border-radius: 6px; box-shadow: var(--shadow); height: 300px; }
+.cases { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; margin-top: 30px; }
+.ph { background: #fff; padding: 10px; border-radius: 6px; box-shadow: var(--shadow); height: 262px; }
 .ph img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 2px; }
 .case:nth-child(1) .ph { transform: rotate(-1.2deg); }
 .case:nth-child(2) .ph { transform: rotate(1.3deg); }
-.cl { font-family: var(--mono); font-size: 16px; font-weight: 600; color: var(--sky); margin-top: 24px; letter-spacing: .06em; }
-.ch { font-size: 27px; font-weight: 700; margin-top: 6px; }
-.cd { font-size: 22px; color: var(--muted); line-height: 1.55; margin-top: 6px; }
-.beauty { margin-top: 30px; background: var(--skybg); border-radius: 14px; padding: 22px 28px; font-size: 24px; line-height: 1.55; }
-.beauty span { display: block; font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--sky); letter-spacing: .12em; margin-bottom: 6px; }
+.cl { font-family: var(--mono); font-size: 18px; font-weight: 600; color: var(--sky); margin-top: 24px; letter-spacing: .06em; }
+.ch { font-size: 30px; font-weight: 700; margin-top: 6px; }
+.cd { font-size: 25px; color: var(--muted); line-height: 1.55; margin-top: 6px; }
+.beauty { margin-top: 28px; background: var(--skybg); border-radius: 14px; padding: 24px 30px; font-size: 31px; font-weight: 500; line-height: 1.5; }
+.beauty span { display: block; font-size: 21px; font-weight: 700; color: var(--sky); margin-bottom: 8px; }
 .beauty b { color: var(--blue); }
 
 /* 표지 */
@@ -56,8 +56,8 @@ h3 { font-size: 38px; font-weight: 700; line-height: 1.4; color: var(--blue); le
 .axes div.on { background: var(--skybg); }
 .axes em { grid-row: span 3; font-family: var(--serif); font-style: italic; font-size: 44px; color: var(--blue); line-height: 1; }
 .axes b { font-size: 29px; }
-.axes i { font-style: normal; font-size: 20px; color: var(--sky); font-weight: 500; margin-top: 2px; }
-.axes p { font-size: 22px; color: var(--muted); margin-top: 4px; }
+.axes i { font-style: normal; font-size: 22px; color: var(--sky); font-weight: 500; margin-top: 2px; }
+.axes p { font-size: 25px; color: var(--muted); margin-top: 4px; }
 
 /* 10 그리드 */
 .grid10 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 36px; }
@@ -65,7 +65,7 @@ h3 { font-size: 38px; font-weight: 700; line-height: 1.4; color: var(--blue); le
 .grid10 div.on { background: var(--skybg); }
 .grid10 em { grid-row: span 2; font-family: var(--serif); font-style: italic; font-size: 46px; color: var(--blue); line-height: 1; }
 .grid10 b { font-size: 26px; }
-.grid10 p { font-size: 19px; color: var(--muted); margin-top: 2px; }
+.grid10 p { font-size: 21px; color: var(--muted); margin-top: 2px; }
 
 /* 마무리 */
 h2.quote { font-size: 66px; }
@@ -73,4 +73,4 @@ h2.quote { font-size: 66px; }
 .qa + .qa { margin-top: 16px; }
 .qa.sky { background: var(--skybg); }
 .qa b { font-size: 27px; color: var(--blue); }
-.qa p { font-size: 23px; color: var(--muted); margin-top: 8px; line-height: 1.55; }
+.qa p { font-size: 26px; color: var(--muted); margin-top: 8px; line-height: 1.55; }
