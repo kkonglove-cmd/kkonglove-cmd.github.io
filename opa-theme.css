@@ -1,0 +1,164 @@
+/* 오파의 작업실(openpouch.kr) 디자인 — 크림 바탕, 울트라마린, 포인트 핑크.
+   영문·숫자 라벨은 Jost, 본문은 Noto Sans KR. 카드는 둥글게(18px), 버튼은 알약 모양.
+   플래너·학원 성적 화면에서 style.css 와 각 화면 CSS 뒤에 불러와 덮어쓴다. */
+:root {
+  --bg: #FAF3E6;
+  --surface: #FFFBF3;
+  --cream: #F5E9D1;
+  --text: #1B1B33;
+  --muted: #6B6577;
+  --line: #E6DACA;
+  --accent: #1117A9;
+  --accent-deep: #0B0F7A;
+  --sky: #DCECFB;
+  --info-bg: #DCECFB;
+  --warn: #B73561;
+  --warn-bg: #FAD9E1;
+  --exam: #B73561;
+  --academy: #2f7d6d;
+  --radius: 18px;
+  --display: 'Jost', 'Futura', 'Avenir Next', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  --body: 'Noto Sans KR', 'SUIT Variable', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  /* 과목 색: 작업실 팔레트에 맞춤 (영어 울트라마린, 국어 핑크) */
+  --s-영어: #1117A9;
+  --s-국어: #B73561;
+  --s-과학: #2f7d6d;
+  --s-역사: #8a5a2b;
+  --s-한문: #6b5b95;
+  --s-수학: #C47F17;
+  --s-학원: #6B6577;
+  --s-공통: #1B1B33;
+}
+body { font-family: var(--body); line-height: 1.65; }
+a { color: var(--accent); }
+
+/* 작은 영문 라벨 (작업실 사이트의 섹션 머리표) */
+.k { display: block; font-family: var(--display); font-weight: 700; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
+
+/* 버튼: 알약 모양 */
+.primary { background: var(--accent); color: var(--bg); border-radius: 999px; font-weight: 700; padding: 12px 22px; }
+.primary:hover { background: var(--accent-deep); }
+.ghost { border: 1.5px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--text); font-weight: 600; }
+.ghost:hover { border-color: var(--accent); background: var(--sky); }
+.ghost.danger { color: var(--warn); }
+.link { color: var(--accent); font-weight: 600; }
+.chip { border: 1.5px solid var(--line); background: var(--surface); font-weight: 600; }
+.chip.on { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* 카드와 목록 */
+.list, .card, .empty, .pcard, .pwd, .pclass span { border: 1.5px solid var(--line); background: var(--surface); }
+.list, .card, .pcard { border-radius: var(--radius); }
+.empty { border-style: dashed; border-radius: var(--radius); }
+.banner { border-radius: 14px; }
+.banner.info { background: var(--sky); border-color: transparent; color: var(--text); }
+.banner.warn { background: var(--warn-bg); border-color: transparent; color: #7a2141; }
+.flag { border-radius: 999px; padding: 2px 9px; background: var(--cream); color: var(--muted); font-weight: 600; }
+.flag.warn { background: var(--warn-bg); color: var(--warn); }
+input, select, textarea { border: 1.5px solid var(--line); border-radius: 12px; background: #fff; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
+/* 아래 메뉴 */
+.tabs { background: rgba(255, 251, 243, .96); backdrop-filter: blur(8px); border-top: 1.5px solid var(--line); }
+.fnav a { font-weight: 600; }
+.fnav a.on { color: var(--accent); font-weight: 700; box-shadow: inset 0 3px 0 var(--accent); }
+
+/* ───────── 플래너 ───────── */
+.phead { background: var(--bg); border-bottom: 0; padding: 28px 16px 8px; text-align: left; max-width: 560px; margin: 0 auto; }
+.pdday { font-family: var(--display); font-weight: 700; font-size: 64px; letter-spacing: -.02em; color: var(--accent); line-height: 1; }
+.phead .psub { color: var(--muted); }
+.pbar { height: 10px; background: var(--cream); border-radius: 999px; }
+.pbar span { background: var(--accent); }
+.pnav .ghost { border-radius: 999px; width: 44px; height: 44px; padding: 0; }
+.pday b { color: var(--accent); }
+.pphase { font-family: var(--body); }
+.pwd { border-radius: 14px; }
+.pwd b { font-family: var(--display); font-weight: 500; font-size: 18px; }
+.pwd.sel { outline: 0; background: var(--accent); border-color: var(--accent); }
+.pwd.sel span, .pwd.sel b { color: var(--bg); }
+.pwd.today:not(.sel) b { color: var(--accent); font-weight: 700; }
+.pwd i.full { background: var(--accent); }
+.pwd.sel i.full, .pwd.sel i.part, .pwd.sel i.none { background: var(--bg); }
+.pwd i.part { background: #E9A9BF; }
+.pwd i.none { background: var(--line); }
+.pclass span { border-radius: 999px; padding: 6px 14px; border-left-width: 1.5px; }
+.pclass span b { color: inherit; }
+.psummary b { color: var(--accent); }
+.pcard { border-left-width: 6px; }
+.pcheck { border: 2px solid var(--line); background: #fff; }
+.is-done .pcheck { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.ptop .pmin { font-family: var(--display); font-weight: 500; }
+.plink { background: var(--accent); color: var(--bg); border-radius: 999px; padding: 8px 16px; font-weight: 700; }
+.plink:hover { background: var(--accent-deep); }
+.phow summary { color: var(--accent); }
+.plate { background: var(--warn-bg); color: var(--warn); border: 0; border-radius: 999px; font-weight: 700; }
+.s-과학 { border-left-color: var(--s-과학); } .s-역사 { border-left-color: var(--s-역사); } .s-한문 { border-left-color: var(--s-한문); }
+.s-국어 { border-left-color: var(--s-국어); } .s-영어 { border-left-color: var(--s-영어); } .s-수학 { border-left-color: var(--s-수학); }
+.s-학원 { border-left-color: var(--s-학원); }
+.s-과학 .psubj { color: var(--s-과학); } .s-역사 .psubj { color: var(--s-역사); } .s-한문 .psubj { color: var(--s-한문); }
+.s-국어 .psubj { color: var(--s-국어); } .s-영어 .psubj { color: var(--s-영어); } .s-수학 .psubj { color: var(--s-수학); }
+.ph2 { font-size: 19px; }
+.srow-link b { font-family: var(--display); font-weight: 600; font-size: 17px; }
+
+/* ───────── 학원 성적 ───────── */
+.shero { padding: 28px 16px 6px; }
+.shero h1 { font-size: 28px; }
+.sstat .big { font-family: var(--display); font-weight: 600; font-size: 30px; letter-spacing: -.01em; color: var(--text); }
+.scard .shead b { font-size: 17px; }
+.schart .line { stroke: var(--accent); stroke-width: 2.5; }
+.schart .dot { fill: var(--accent); stroke: var(--surface); }
+.schart .dot.miss { fill: var(--surface); stroke: var(--warn); stroke-width: 2.5; }
+.schart .passline { stroke: #D34C7A; opacity: .7; }
+.schart .axis { font-family: var(--display); }
+.schart .vlabel { font-family: var(--display); fill: var(--accent); }
+/* 학원 문자 넣기 — 상자는 다른 카드와 같고, 울트라마린이 너무 센 버튼만 작업실 살구색으로 */
+.add { --apricot: #FBE6C1; --apricot-deep: #F6D49A; --ink2: #242336; --brown: #5A4C38; text-align: left; }
+.add .upload, .add .primary.wide { background: var(--apricot); color: var(--ink2); border: 1.5px solid #E7C48A; text-align: center; }
+.add .upload:hover, .add .primary.wide:hover { background: var(--apricot-deep); }
+/* 넣는 방법 고르기: 사진으로 | 글로 */
+.add .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; margin: 12px 0 4px; background: var(--cream); border-radius: 999px; }
+.add .seg button { border: 0; background: transparent; border-radius: 999px; padding: 10px 0; font-weight: 700; color: var(--muted); min-height: 44px; }
+.add .seg button.on { background: var(--apricot); color: var(--ink2); box-shadow: 0 0 0 1.5px #E7C48A inset; }
+.add .add-help { color: var(--muted); font-size: 14px; margin: 12px 2px 0; text-align: left; }
+.stable th { font-family: var(--display); font-weight: 600; letter-spacing: .06em; color: var(--muted); font-size: 12px; text-transform: uppercase; }
+.fb li b { color: var(--accent); }
+
+/* 맨 아래 만든 사람 표시 — 작업실 푸터처럼 은은한 크림 띠 위에 한 줄 */
+.sfoot { margin-top: 36px; background: linear-gradient(to bottom, #F1E5D3, var(--bg)); border-top: 1px solid rgba(27, 27, 51, .12); }
+.sfoot-in { max-width: 560px; margin: 0 auto; padding: 18px 16px 22px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.sfoot-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.sfoot-by { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); }
+.sfoot-by img { flex: none; }
+.sfoot-ig { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1.5px solid var(--accent); border-radius: 999px;
+  color: var(--accent); font-family: var(--display); font-weight: 600; font-size: 14px; text-decoration: none; white-space: nowrap; }
+.sfoot-ig:hover { background: var(--sky); }
+.sfoot-ig:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+/* 가족 사이트(아이용) 푸터: 눈에 띄지 않게 작고 흐리게 */
+.sfoot-quiet { margin: 40px auto 0; padding: 0 16px 20px; text-align: center; font-family: var(--display); font-size: 11px; letter-spacing: .04em; color: var(--muted); opacity: .55; }
+.sfoot-quiet a { color: inherit; text-decoration: none; }
+
+/* ───────── PC 넓은 화면 ─────────
+   플래너: 왼쪽에 D-day·날짜·학원 시간·최근 성적, 오른쪽에 오늘 공부 목록.
+   학원 성적: 테스트 카드를 여러 줄로, 문자 넣기와 기록 관리는 나란히. 폰 화면은 그대로. */
+@media (min-width: 960px) {
+  #planner { max-width: 1120px; display: grid; grid-template-columns: 380px minmax(0, 1fr); column-gap: 48px;
+    grid-template-areas: "head right" "left right" "scores right" "note right" "foot foot" "nav nav";
+    grid-template-rows: auto auto auto 1fr auto; padding: 0 24px 40px; }
+  #planner > main { display: contents; }
+  #planner .phead { grid-area: head; max-width: none; margin: 0; padding: 40px 0 8px; }
+  #planner .pleft { grid-area: left; }
+  #planner .pright { grid-area: right; padding-top: 40px; }
+  #planner .pscores { grid-area: scores; }
+  #planner .note { grid-area: note; align-self: start; }
+  #planner .sfoot-quiet, #planner .sfoot { grid-area: foot; }
+  #planner .fnav { grid-area: nav; }
+  #planner .pright .plist { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; align-items: start; }
+  #planner .pright .plist > * { margin: 0; }
+
+  #scores { max-width: 1120px; padding: 0 24px 40px; }
+  #scores .shero { padding: 40px 0 10px; }
+  #scores .pad { padding: 0; }
+  #scores .sgrid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  #scores .add { max-width: 640px; }
+  .sfoot-in { max-width: 1120px; padding-left: 24px; padding-right: 24px; }
+}
