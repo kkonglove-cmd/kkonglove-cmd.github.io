@@ -1,0 +1,92 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>text cards</title>
+<link rel="stylesheet" href="../fonts/noto.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #888; }
+.card { width: 1080px; height: 1350px; margin: 0 auto 30px; padding: 72px 76px; display: flex; flex-direction: column;
+  font-family: 'Noto Sans KR', sans-serif; text-align: center; word-break: keep-all; letter-spacing: -0.02em; }
+.dark { background: #0B0F7A; color: #FAF3E6; --k: #8FD0FF; --sub: rgba(250,243,230,.85); --line: #8FD0FF; --meta: rgba(250,243,230,.6); }
+.light { background: #E3F0FC; color: #0B0F7A; --k: #3D6FC4; --sub: #2A2F66; --line: #7FB2EA; --meta: rgba(11,15,122,.6); }
+.top, .foot { display: flex; justify-content: space-between; font-size: 21px; font-weight: 500; color: var(--meta); letter-spacing: .02em; }
+.txt { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.k { font-size: 25px; font-weight: 500; color: var(--k); margin-bottom: 26px; }
+h2 { font-size: 62px; font-weight: 700; line-height: 1.32; letter-spacing: -0.04em; margin-bottom: 56px; }
+p { font-size: 36px; font-weight: 400; line-height: 1.6; color: var(--sub); }
+p + p { margin-top: 38px; }
+em { font-style: normal; font-weight: 700; color: inherit; text-decoration: underline; text-decoration-color: var(--line);
+  text-decoration-thickness: 5px; text-underline-offset: 10px; }
+.dark em { color: #FFFFFF; }
+.steps, .qs { list-style: none; text-align: left; margin-bottom: 44px; }
+.steps li, .qs li { font-size: 35px; line-height: 1.5; padding: 12px 0; color: var(--sub); font-weight: 500; }
+.steps span, .qs span { display: inline-block; width: 64px; font-size: 24px; font-weight: 700; color: var(--k); vertical-align: 4px; }
+.qs li { font-size: 32px; padding: 10px 0; }
+.steps span { width: 86px; }
+.tbl { width: 100%; text-align: left; margin-top: -16px; }
+.tr { display: grid; grid-template-columns: 64px 250px 1fr; align-items: center; padding: 14px 22px; border-bottom: 1px solid rgba(11,15,122,.12); }
+.tr b { font-size: 34px; font-weight: 700; color: var(--k); }
+.tr strong { font-size: 31px; font-weight: 700; }
+.tr span { font-size: 25px; color: var(--sub); }
+.tr.on { background: #FFFFFF; border-radius: 14px; border-bottom-color: transparent; box-shadow: 0 6px 18px -10px rgba(11,15,122,.35); }
+.tr.on b, .tr.on strong { color: #0B0F7A; }
+</style></head><body>
+<section class="card dark" id="c1">
+  <div class="top"><span>TREND KOREA 2027</span><span>01 / 12</span></div>
+  <div class="txt"><div class="k">트렌드 코리아 2027을 듣고</div><h2>10개 키워드를 듣는 내내<br>'맞아, 맞아' 했어요</h2><p>그런데 듣다 보니<br>전부 <em>내 얘기</em>였어요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card light" id="c2">
+  <div class="top"><span>TREND KOREA 2027</span><span>02 / 12</span></div>
+  <div class="txt"><div class="k">권태사회</div><h2>풍요로우니까<br>빨리 지겨워져요</h2><p>새로운 게 매일 쏟아지니<br>금방 또 다음 걸 찾게 되죠.</p><p>그래서 요즘은 이렇게 생각해요.<br><em>괜찮으면, 그냥 즐기자.</em></p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card dark" id="c3">
+  <div class="top"><span>TREND KOREA 2027</span><span>03 / 12</span></div>
+  <div class="txt"><div class="k">라이프 ROI</div><h2>사랑까지<br>ROI를 따지는 시대</h2><p>성향을 넣은 AI 아바타끼리 먼저 데이트해 보고<br>잘 맞으면 만난대요.</p><p>처음엔 충격이었는데,<br>상처받지 않고 <em>미리 해볼 수 있다면</em><br>나쁘지 않겠다 싶었어요.</p><p>생각해 보면 나도 이미<br>매일 ROI를 따지고 있더라고요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card light" id="c4">
+  <div class="top"><span>TREND KOREA 2027</span><span>04 / 12</span></div>
+  <div class="txt"><div class="k">저장인류</div><h2>다 저장하는데,<br>그게 누구에게 좋은 일일까?</h2><p>사진, 캡처, 나에게 보내기.<br>내 데이터는 매일 쌓이는데</p><p>그게 결국 누구에게 좋은 일인지<br><em>가끔 멈칫</em>하게 돼요.<br>물론 나도 오늘 또 저장했지만요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card dark" id="c5">
+  <div class="top"><span>TREND KOREA 2027</span><span>05 / 12</span></div>
+  <div class="txt"><div class="k">폼팩터 시프트</div><h2>완전히 새로 만들기보다<br>살짝 비틀어 보기</h2><p>기능은 그대로, 형태만 바꿔도<br>사람들은 새롭다고 느껴요.</p><p>회사에서 <em>당장 해볼 수 있는</em><br>가장 현실적인 혁신 같았어요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card light" id="c6">
+  <div class="top"><span>TREND KOREA 2027</span><span>06 / 12</span></div>
+  <div class="txt"><div class="k">해봄경제 × 권태사회</div><h2>요즘 나는<br>엄청 해보는 중이에요</h2><p>작업실도 만들고, 카드뉴스도 만들고.<br>생각한 게 뚝딱 만들어지니 재밌어요.</p><p>그런데 가끔 허무해져요.<br>이 마음은 뭘까요.<br><em>풍요 속에 오는 권태</em>일까요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card dark" id="c7">
+  <div class="top"><span>TREND KOREA 2027</span><span>07 / 12</span></div>
+  <div class="txt"><div class="k">바이브 워킹</div><h2>회사는 AI 에이전트를<br>만들라고 하는데</h2><p>솔직히 내가 쌓은 노하우를<br>회사에 다 꺼내 놓고 싶지는 않아요.</p><p>개인과 조직 사이의 이 간극은<br><em>일하는 방식</em>이 바뀌어야 메워질 것 같아요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card light" id="c8">
+  <div class="top"><span>TREND KOREA 2027</span><span>08 / 12</span></div>
+  <div class="txt"><div class="k">바이브 워킹</div><h2>성공 사례 말고<br>실패 사례를 나누는 판</h2><p>"이렇게 했더니 망했어요"는<br>누구나 신나게 말할 수 있잖아요.</p><p>그런 판이 깔리면<br><em>나도 꺼내 놓을 수 있을 것</em> 같아요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card dark" id="c9">
+  <div class="top"><span>TREND KOREA 2027</span><span>09 / 12</span></div>
+  <div class="txt"><div class="k">리:텐션 전략</div><h2>새 사람을 데려오는 건<br>너무 어려워요</h2><p>2만 원 쿠폰을 줘도<br>쓰고 나면 탈퇴하는 시대.</p><p>그래서 지금 곁에 있는 사람이<br><em>더 오래 머물게</em> 하는 쪽으로.<br>나한테도 필요한 이야기였어요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card light" id="c10">
+  <div class="top"><span>TREND KOREA 2027</span><span>10 / 12</span></div>
+  <div class="txt"><div class="k">휴먼엣지</div><h2>너무 번듯하면<br>넘기게 돼요</h2><p>AI로 매끈하게 만든 건<br>'아, AI 돌렸구나' 하고 스킵하게 되더라고요.</p><p>사람이 <em>수고한 흔적</em>이 느껴져야<br>마음이 가요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card dark" id="c11">
+  <div class="top"><span>TREND KOREA 2027</span><span>11 / 12</span></div>
+  <div class="txt"><div class="k">하프시그널</div><h2>나도 X세대,<br>하프시그널 세대예요</h2><p>갱년기라고 구질구질하게 버티지 않아요.</p><p><em>나한테 쓰면서</em><br>후반전을 준비하는 중이에요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+<section class="card light" id="c12">
+  <div class="top"><span>TREND KOREA 2027</span><span>12 / 12</span></div>
+  <div class="txt"><div class="k">안목자본</div><h2>그래서 결국은<br>안목이에요</h2><p>넘치는 것들 사이에서<br>무엇을 즐기고, 무엇을 남길지.</p><p><em>고르는 눈</em>을 키우는 한 해를<br>보내 보려고요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 후기</span></div>
+</section>
+</body></html>
