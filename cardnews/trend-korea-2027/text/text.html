@@ -3,22 +3,72 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #888; }
-.card { width: 1080px; height: 1350px; margin: 0 auto 30px; background: #0B0F7A; color: #FAF3E6;
-  display: flex; align-items: center; justify-content: center; position: relative;
-  font-family: 'Noto Sans KR', sans-serif; text-align: center; word-break: keep-all; padding: 0 80px; }
-.txt p { font-size: 44px; font-weight: 500; line-height: 1.62; letter-spacing: -0.02em; }
-.txt p + p { margin-top: 44px; }
-em { font-style: normal; color: #B9DCF7; font-weight: 700; }
-.foot { position: absolute; bottom: 64px; left: 0; right: 0; font-size: 24px; font-weight: 500; color: rgba(250,243,230,.65); letter-spacing: .02em; }
+.card { width: 1080px; height: 1350px; margin: 0 auto 30px; padding: 72px 76px; display: flex; flex-direction: column;
+  font-family: 'Noto Sans KR', sans-serif; text-align: center; word-break: keep-all; letter-spacing: -0.02em; }
+.dark { background: #0B0F7A; color: #FAF3E6; --k: #8FD0FF; --sub: rgba(250,243,230,.85); --line: #8FD0FF; --meta: rgba(250,243,230,.6); }
+.light { background: #E3F0FC; color: #0B0F7A; --k: #3D6FC4; --sub: #2A2F66; --line: #7FB2EA; --meta: rgba(11,15,122,.6); }
+.top, .foot { display: flex; justify-content: space-between; font-size: 21px; font-weight: 500; color: var(--meta); letter-spacing: .02em; }
+.txt { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.k { font-size: 25px; font-weight: 500; color: var(--k); margin-bottom: 26px; }
+h2 { font-size: 62px; font-weight: 700; line-height: 1.32; letter-spacing: -0.04em; margin-bottom: 56px; }
+p { font-size: 36px; font-weight: 400; line-height: 1.6; color: var(--sub); }
+p + p { margin-top: 38px; }
+em { font-style: normal; font-weight: 700; color: inherit; text-decoration: underline; text-decoration-color: var(--line);
+  text-decoration-thickness: 5px; text-underline-offset: 10px; }
+.dark em { color: #FFFFFF; }
+.steps, .qs { list-style: none; text-align: left; margin-bottom: 44px; }
+.steps li, .qs li { font-size: 35px; line-height: 1.5; padding: 12px 0; color: var(--sub); font-weight: 500; }
+.steps span, .qs span { display: inline-block; width: 64px; font-size: 24px; font-weight: 700; color: var(--k); vertical-align: 4px; }
+.qs li { font-size: 32px; padding: 10px 0; }
 </style></head><body>
-<section class="card" id="c1"><div class="txt"><p>트렌드 코리아 2027 키워드에는<br>'AI'가 없다</p><p>1년 만에 AI가 전기처럼<br>당연한 것이 됐기 때문이다</p></div><div class="foot">오파의 작업실</div></section>
-<section class="card" id="c2"><div class="txt"><p>그래서 올해의 질문이 바뀌었다</p><p>AI를 쓰느냐가 아니라<br>AI 때문에 달라진 일, 인생, 감각을<br>어떻게 다루느냐</p></div><div class="foot">오파의 작업실</div></section>
-<section class="card" id="c3"><div class="txt"><p><em>바이브 워킹</em></p><p>AI로 보고서는 이틀에서 반나절이 됐는데<br>팀 프로젝트는 여전히 3개월이다</p><p>병목은 AI가 아니라<br>일하는 방식에 있다</p></div><div class="foot">오파의 작업실</div></section>
-<section class="card" id="c4"><div class="txt"><p>AI는 아직 신입사원이다</p><p>10년 손발 맞춘 동료는<br>"3년 전 그 PPT처럼" 한마디면 알아듣는다</p><p>AI도 그렇게 되려면<br><em>우리 팀의 맥락</em>부터 가르쳐야 한다</p></div><div class="foot">오파의 작업실</div></section>
-<section class="card" id="c5"><div class="txt"><p>우수 사례 경진대회보다<br>실패 사례를 모으는 팀이 더 빨리 배운다</p><p>"이렇게 썼더니 망했다"는<br>누구나 신나게 공유하기 때문이다</p></div><div class="foot">오파의 작업실</div></section>
-<section class="card" id="c6"><div class="txt"><p><em>하프시그널</em></p><p>갱년기는 끝이 아니라<br>인생 후반전을 알리는 하프타임이다</p><p>X세대는 참지 않고<br>말하고, 소비하고, 준비한다</p></div><div class="foot">오파의 작업실</div></section>
-<section class="card" id="c7"><div class="txt"><p>이제 갱년기는 집이 아니라<br>일터의 문제이기도 하다</p><p>이케아는 갱년기 동료 배려 매뉴얼을 만들었고<br>노무라는 갱년기 유급휴가를 준다</p></div><div class="foot">오파의 작업실</div></section>
-<section class="card" id="c8"><div class="txt"><p><em>안목자본</em></p><p>AI를 써도 글을 못 쓰는 사람이 있다<br>좋은 글이 뭔지 모르기 때문이다</p><p>무한히 만들어지는 시대에는<br>고르는 눈이 실력이다</p></div><div class="foot">오파의 작업실</div></section>
-<section class="card" id="c9"><div class="txt"><p>안목은 이렇게 자란다</p><p>많이 보고, 내 언어로 표현하고<br>전문가의 평가와 비교하고, 오래 반복한다</p><p>보고 저장만 하면<br>안목은 생기지 않는다</p></div><div class="foot">오파의 작업실</div></section>
-<section class="card" id="c10"><div class="txt"><p>어제의 해결책이<br>오늘의 문제점이 된다</p><p>— 트렌드 코리아 2027 강연 중</p><p><em>내년 기획 전에 다시 꺼내 볼 수 있게<br>저장해두세요</em></p></div><div class="foot">오파의 작업실</div></section>
+<section class="card dark" id="c1">
+  <div class="top"><span>TREND KOREA 2027</span><span>01 / 10</span></div>
+  <div class="txt"><div class="k">강연에서 남은 질문</div><h2>2027 키워드에는<br>'AI'가 없어요</h2><p>1년 만에 AI가 전기처럼<br>당연한 것이 됐기 때문이에요.</p><p>이제 질문은 'AI를 쓰느냐'가 아니라<br><em>'AI 때문에 달라진 걸 어떻게 다루느냐'</em>예요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
+<section class="card light" id="c2">
+  <div class="top"><span>TREND KOREA 2027</span><span>02 / 10</span></div>
+  <div class="txt"><div class="k">01 · 바이브 워킹</div><h2>AI를 쓴다고<br>일을 잘하게 되는 건 아니에요</h2><p>보고서는 2일 → 반나절,<br>팀 프로젝트는 3개월 그대로.</p><p>병목은 AI가 아니라<br><em>일하는 방식</em>에 있어요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
+<section class="card dark" id="c3">
+  <div class="top"><span>TREND KOREA 2027</span><span>03 / 10</span></div>
+  <div class="txt"><div class="k">01 · 바이브 워킹</div><h2>AI는 아직<br>신입사원이에요</h2><p>10년 손발 맞춘 동료는<br>"3년 전 그 PPT처럼" 한마디면 알아들어요.</p><p>AI도 그렇게 되려면<br><em>우리 팀의 맥락</em>부터 가르쳐야 해요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
+<section class="card light" id="c4">
+  <div class="top"><span>TREND KOREA 2027</span><span>04 / 10</span></div>
+  <div class="txt"><div class="k">01 · 바이브 워킹</div><h2>우수 사례보다<br>실패 사례를 모으세요</h2><p>경진대회는 부담이라 아무도 안 내요.</p><p>"이렇게 썼더니 망했어"는<br>누구나 신나게 공유해요.</p><p>그게 쌓이면 <em>팀의 실력</em>이 돼요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
+<section class="card dark" id="c5">
+  <div class="top"><span>TREND KOREA 2027</span><span>05 / 10</span></div>
+  <div class="txt"><div class="k">02 · 하프시그널</div><h2>갱년기는 끝이 아니라<br>하프타임이에요</h2><p>100세 시대, 50대는<br>인생의 딱 절반이에요.</p><p>X세대는 참지 않아요.<br>말하고, 소비하고, <em>후반전을 준비</em>해요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
+<section class="card light" id="c6">
+  <div class="top"><span>TREND KOREA 2027</span><span>06 / 10</span></div>
+  <div class="txt"><div class="k">02 · 하프시그널</div><h2>이제 갱년기는<br>일터의 이야기이기도 해요</h2><p>자녀 사춘기, 부부 갱년기, 부모 부양이<br>한꺼번에 오는 시기.</p><p>이케아는 배려 매뉴얼을,<br>노무라는 유급휴가를 만들었어요.</p><p><em>혼자 견디는 일에서 함께 챙기는 일로</em>.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
+<section class="card dark" id="c7">
+  <div class="top"><span>TREND KOREA 2027</span><span>07 / 10</span></div>
+  <div class="txt"><div class="k">03 · 안목자본</div><h2>AI를 써도<br>글을 못 쓰는 이유</h2><p>좋은 글이 뭔지 모르기 때문이에요.</p><p>무엇이든 무한히 만들어지는 시대에는<br><em>고르는 눈</em>이 실력이에요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
+<section class="card light" id="c8">
+  <div class="top"><span>TREND KOREA 2027</span><span>08 / 10</span></div>
+  <div class="txt"><div class="k">03 · 안목자본</div><h2>보고 저장만 하면<br>안목은 생기지 않아요</h2><ol class="steps"><li><span>01</span>좋은 것을 많이 보고</li><li><span>02</span>내 언어로 표현하고</li><li><span>03</span>전문가의 평가와 비교하고</li><li><span>04</span>오래 반복하기</li></ol><p>촌스러워도, 틀려도 괜찮아요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
+<section class="card dark" id="c9">
+  <div class="top"><span>TREND KOREA 2027</span><span>09 / 10</span></div>
+  <div class="txt"><div class="k">강연의 마지막 문장</div><h2>어제의 해결책이<br>오늘의 문제점이에요</h2><p>잘해온 방식을 지키는 것과<br>익숙한 방식만 고집하는 건<br>다른 일이니까요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
+<section class="card light" id="c10">
+  <div class="top"><span>TREND KOREA 2027</span><span>10 / 10</span></div>
+  <div class="txt"><div class="k">나를 위한 체크리스트</div><h2>2027년을 앞두고<br>나에게 던져볼 5가지 질문</h2><ol class="qs"><li><span>01</span>AI를 쓰면서도 그대로인 일하는 방식은?</li><li><span>02</span>우리 팀이 AI에게 가르쳐야 할 맥락은?</li><li><span>03</span>이번 달 모아둔 실패 사례는?</li><li><span>04</span>내 인생의 후반전, 무엇을 준비하고 있나?</li><li><span>05</span>최근 '좋다'고 느낀 걸 내 언어로 설명할 수 있나?</li></ol><p>저장해두고 내년 기획 전에 다시 꺼내 보세요.</p></div>
+  <div class="foot"><span>오파의 작업실</span><span>『트렌드 코리아 2027』 강연 정리</span></div>
+</section>
 </body></html>
