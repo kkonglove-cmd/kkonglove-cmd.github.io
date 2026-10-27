@@ -1,7 +1,7 @@
 /* 에디토리얼 스타일: 아이보리 종이 + 울트라마린 + 연하늘 */
 :root {
-  --paper: #FCFAF5; --ink: #1B1B33; --muted: #77727F; --line: #E4DDD0;
-  --blue: #1117A9; --navy: #0B0F7A; --sky: #3D82CC; --skybg: #E3F0FC; --cream: #F4EEE3;
+  --paper: #F5ECDD; --ink: #1B1B33; --muted: #6E6878; --line: #DCCDB5;
+  --blue: #1117A9; --navy: #0B0F7A; --sky: #3D82CC; --skybg: #E3F0FC; --cream: #FCF8F0;
   --mono: 'IBM Plex Mono', 'Noto Sans KR', monospace;
   --serif: 'Instrument Serif', 'Noto Sans KR', serif;
   --shadow: 0 1px 2px rgba(40,32,20,.06), 0 14px 28px -12px rgba(40,32,20,.22);
