@@ -88,3 +88,5 @@ h2.big { font-size: 76px; line-height: 1.25; }
 .ph.qt p { font-family: var(--serif), 'Noto Sans KR'; color: #FCFAF5; font-size: 34px; font-weight: 700; line-height: 1.4; text-align: center; letter-spacing: -.02em; }
 h2.big.quote { font-size: 80px; }
 .lead.close { margin-top: 0; padding-top: 40px; border-top: 1px solid var(--line); }
+.cover-photo { display: block; width: 953px; margin: 18px 0 0 -13px; }
+.cover-photo + .banner { margin-top: 14px; }
