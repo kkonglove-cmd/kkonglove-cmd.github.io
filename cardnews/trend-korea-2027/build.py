@@ -6,12 +6,44 @@ MARK = ('<svg viewBox="100 24 100 252" aria-hidden="true"><g fill="currentColor"
 SRC = '『트렌드 코리아 2027』 저자 강연 정리'
 
 
+import math
+
+BURST_COLORS = ['#8EC3F0', '#1117A9', '#B9DCF7', '#5C8FD6', '#F2CF96']
+
+
+def burst(cx, cy, r, color, n=150, op=.55, gid='g'):
+    """레퍼런스의 방사형 선 원: 가는 선을 원 둘레로 n개 뿌리고 가운데는 흐린 빛."""
+    lines = ''.join(
+        f'<line x1="{cx + r * .12 * math.cos(a):.1f}" y1="{cy + r * .12 * math.sin(a):.1f}" '
+        f'x2="{cx + r * math.cos(a):.1f}" y2="{cy + r * math.sin(a):.1f}"/>'
+        for a in (2 * math.pi * k / n for k in range(n)))
+    return (f'<radialGradient id="{gid}"><stop offset="0" stop-color="{color}" stop-opacity=".45"/>'
+            f'<stop offset="1" stop-color="{color}" stop-opacity="0"/></radialGradient>'
+            f'<circle cx="{cx}" cy="{cy}" r="{r * .55:.0f}" fill="url(#{gid})"/>'
+            f'<g stroke="{color}" stroke-width="1.3" stroke-opacity="{op}">{lines}</g>')
+
+
+def deco(i, big=False):
+    if big:
+        parts = [burst(940, 170, 300, '#8EC3F0', 180, .5, f'b{i}a'),
+                 burst(700, 90, 150, '#1117A9', 140, .2, f'b{i}b'),
+                 burst(1010, 470, 150, '#F2CF96', 120, .5, f'b{i}c')]
+    else:
+        c1, c2 = BURST_COLORS[i % 5], BURST_COLORS[(i + 2) % 5]
+        x = 930 if i % 2 else 980
+        parts = [burst(x, 150, 220, c1, 150, .45 if c1 != '#1117A9' else .22, f'b{i}a'),
+                 burst(x - 170, 290, 120, c2, 110, .45 if c2 != '#1117A9' else .22, f'b{i}b'),
+                 burst(120 if i % 2 else 960, 1130, 150, '#B9DCF7', 130, .4, f'b{i}c')]
+    return f'<svg class="burst" viewBox="0 0 1080 1350" aria-hidden="true">{"".join(parts)}</svg>'
+
+
 def card(i, total, label, body, blue=False):
-    cls = 'card blue' if blue else 'card'
+    cls = 'card cover' if blue else 'card'
     return f'''<section class="{cls}" id="c{i}">
+  {deco(i, blue or i == 1)}
   <div class="head"><span class="lbl">{label}</span><span class="pg">{i:02d} / {total:02d}</span></div>
   {body}
-  <div class="foot"><span class="sig" style="font-family:var(--body);letter-spacing:.02em;font-size:22px">{MARK}오파의 작업실</span><span class="src">{SRC}</span></div>
+  <div class="foot"><span class="sig">{MARK}오파의 작업실</span><span class="src">{SRC}</span></div>
 </section>'''
 
 
@@ -28,7 +60,7 @@ def kw(num, axis, title, en, define, rows, insight, images, h=210):
     rs = ''.join(f'<div class="row"><span class="n">{j}</span><div><div class="h">{a}</div>'
                  + (f'<div class="d">{b}</div>' if b else '') + '</div></div>'
                  for j, (a, b) in enumerate(rows, 1))
-    return f'''<div class="ktop"><span class="knum" style="font-size:116px">{num}</span><span class="axis">{axis}</span></div>
+    return f'''<div class="ktop"><span class="knum" style="font-size:150px">{num}</span><span class="axis">{axis}</span></div>
   <h2 class="mt-m" style="font-size:76px">{title}</h2>
   <div class="en">{en}</div>
   <p class="lead mt-s" style="font-size:29px;line-height:1.5">{define}</p>
@@ -39,7 +71,7 @@ def kw(num, axis, title, en, define, rows, insight, images, h=210):
 
 def page(title, cards):
     return f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>{title}</title>
-<link rel="stylesheet" href="fonts/noto.css"><link rel="stylesheet" href="fonts/jost.css">
+<link rel="stylesheet" href="fonts/noto.css"><link rel="stylesheet" href="fonts/jost.css"><link rel="stylesheet" href="fonts/extra.css">
 <link rel="stylesheet" href="opa-cards.css"></head><body>
 {chr(10).join(cards)}
 </body></html>'''
