@@ -86,3 +86,5 @@ h2.big { font-size: 76px; line-height: 1.25; }
 /* 사진 대신 인용 타일 */
 .ph.qt { display: flex; align-items: center; justify-content: center; background: var(--blue); }
 .ph.qt p { font-family: var(--serif), 'Noto Sans KR'; color: #FCFAF5; font-size: 34px; font-weight: 700; line-height: 1.4; text-align: center; letter-spacing: -.02em; }
+h2.big.quote { font-size: 80px; }
+.lead.close { margin-top: 0; padding-top: 40px; border-top: 1px solid var(--line); }

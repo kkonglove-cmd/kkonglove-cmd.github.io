@@ -126,12 +126,12 @@ cards = [card(1, 'TREND KOREA 2027 &nbsp;/&nbsp; THE OVERVIEW', '''
   <div class="banner">이제 10개 키워드를 하나씩 풀어볼게요 <b>→</b></div>''')]
 cards += [kw(i, *k) for i, k in enumerate(KW, 4)]
 cards.append(card(14, 'WHAT STAYS AFTER THE TALK', '''
-  <div class="lab big">AFTER THE TALK</div>
-  <h2 class="quote">"어제의 해결책이<br><span>오늘의 문제점이다."</span></h2>
-  <p class="def">과거의 성공 공식을 흘려보내는 용기.<br>강연의 마지막 문장이었어요.</p>
-  <div class="qa sky"><b>Q. K-브랜드는 왜 다시 주목받을까?</b>
-    <p>한류가 아니라 제품 그 자체, 특히 속도. 인디 브랜드는 3개월마다 신제품을 내요.</p></div>
-  <div class="banner">좋은 브랜드일수록, <b>계속 다시 질문</b>해야 해요.</div>'''))
+  <div class="msg">
+    <div class="lab big">강연의 마지막 문장</div>
+    <h2 class="big quote">"어제의 해결책이<br><span>오늘의 문제점</span>이다."</h2>
+    <p class="lead">어제 문제를 풀 때 유용했던 지식이<br>오늘은 발목을 잡을 수도 있어요.</p>
+    <p class="lead close">그래서 필요한 건,<br><b>과거의 성공 공식을 흘려보내는 용기.</b></p>
+  </div>'''))
 cards.append(card(15, 'SAVE THIS PAGE', '''
   <div class="lab big">저장용 한 장 요약</div>
   <h2>2027 키워드 10</h2>
