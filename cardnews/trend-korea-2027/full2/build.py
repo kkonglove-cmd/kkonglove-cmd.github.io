@@ -107,7 +107,7 @@ cards = [card(1, 'TREND KOREA 2027 &nbsp;/&nbsp; THE OVERVIEW', '''
   <div class="lab big">AN EDITORIAL NOTE · 2027</div>
   <h1>트렌드 코리아 2027<br><span>한눈에</span></h1>
   <p class="def">10개 키워드를 다 듣고 나니,<br>결국 <b class="u">두 문장</b>이 남았어요.</p>
-  <img class="cover-photo" src="../img/cover_speaker.png" alt="">
+  <div class="ph cover-rect"><img src="../img/cover_speaker_rect.png" alt=""></div>
   <div class="banner">넘겨서 두 문장부터 확인해 보세요 <b>→</b></div>'''),
          card(2, 'MESSAGE 01 / 02', '''
   <div class="msg">
