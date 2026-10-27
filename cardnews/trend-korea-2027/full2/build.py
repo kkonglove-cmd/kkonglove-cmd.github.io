@@ -41,7 +41,7 @@ def kw(i, num, ko, en, define, insight, cases, beauty):
   <div class="lab">핵심 인사이트</div>
   <h3>{insight}</h3>
   <div class="cases">{cs}</div>
-  <div class="beauty"><span>뷰티 시사점</span>{beauty}</div>''')
+  <div class="beauty"><span>시사점</span>{beauty}</div>''')
 
 
 KW = [
