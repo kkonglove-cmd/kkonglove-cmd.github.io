@@ -57,7 +57,7 @@ def fmt(t):
 N = len(SLIDES)
 cards = []
 for i, s in enumerate(SLIDES, 1):
-    tone = 'dark' if i % 2 else 'light'
+    tone = 'light' if i % 2 else 'dark'
     parts = [f'<div class="k">{s["k"]}</div>', f'<h2>{fmt(s["t"])}</h2>']
     if 'steps' in s:
         parts.append('<ol class="steps">' + ''.join(f'<li><span>{a}</span>{x}</li>' for a, x in s['steps']) + '</ol>')
@@ -104,6 +104,8 @@ em {{ font-style: normal; font-weight: 700; color: inherit; text-decoration: und
 .tr span {{ font-size: 25px; color: var(--sub); }}
 .tr.on {{ background: #FFFFFF; border-radius: 14px; border-bottom-color: transparent; box-shadow: 0 6px 18px -10px rgba(11,15,122,.35); }}
 .tr.on b, .tr.on strong {{ color: #0B0F7A; }}
+.tr.on span {{ color: #2A2F66; }}
+.dark .tr {{ border-bottom-color: rgba(250,243,230,.14); }}
 </style></head><body>
 {chr(10).join(cards)}
 </body></html>''')
