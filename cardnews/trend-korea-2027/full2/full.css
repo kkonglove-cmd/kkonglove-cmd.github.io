@@ -74,3 +74,15 @@ h2.quote { font-size: 66px; }
 .qa.sky { background: var(--skybg); }
 .qa b { font-size: 27px; color: var(--blue); }
 .qa p { font-size: 26px; color: var(--muted); margin-top: 8px; line-height: 1.55; }
+
+/* 메시지 카드 */
+.msg { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+h2.big { font-size: 76px; line-height: 1.25; }
+.lead { font-size: 34px; line-height: 1.6; margin: 40px 0 56px; color: var(--ink); }
+.lead b, .def b.u { color: var(--blue); }
+.chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.chips span { font-size: 26px; font-weight: 700; color: var(--blue); background: var(--skybg); padding: 12px 24px; border-radius: 999px; }
+.msg + .banner { margin-top: 0; margin-bottom: 36px; }
+/* 사진 대신 인용 타일 */
+.ph.qt { display: flex; align-items: center; justify-content: center; background: var(--blue); }
+.ph.qt p { font-family: var(--serif), 'Noto Sans KR'; color: #FCFAF5; font-size: 34px; font-weight: 700; line-height: 1.4; text-align: center; letter-spacing: -.02em; }

@@ -2,7 +2,7 @@
 사례 사진 두 장 + CASE 설명, FOR BEAUTY 박스. 사진은 ../img 에서 가져온다."""
 import math
 
-N = 14
+N = 15
 SRC = '『트렌드 코리아 2027』 저자 강연 정리'
 
 
@@ -27,6 +27,8 @@ def card(i, meta, body):
 
 
 def photo(name, cls=''):
+    if name.startswith('quote:'):  # 사진이 없는 사례는 인용 타일로
+        return f'<div class="ph qt {cls}"><p>{name[6:]}</p></div>'
     return f'<div class="ph {cls}"><img src="../img/{name}.png" alt=""></div>'
 
 
@@ -41,7 +43,7 @@ def kw(i, num, ko, en, define, insight, cases, beauty):
   <div class="lab">핵심 인사이트</div>
   <h3>{insight}</h3>
   <div class="cases">{cs}</div>
-  <div class="beauty"><span>시사점</span>{beauty}</div>''')
+  <div class="beauty"><span>그래서 우리는</span>{beauty}</div>''')
 
 
 KW = [
@@ -75,10 +77,10 @@ KW = [
      [('jcurve', '보고서 2일 → 반나절', '그런데 팀 프로젝트는 여전히 3개월. 일하는 방식이 그대로라서.'),
       ('cba', '맥락 없는 도입의 실패', 'AI 음성봇을 서둘러 도입했다가 되돌린 해외 은행 사례.')],
      '우수 사례 경진대회 대신 <b>실패 사례</b>를 모으세요. 그게 팀의 학습이 돼요.'),
-    ('07', '리:텐션 전략', 'Hold on to Your Customers! Retention Strategy', '경쟁의 중심이 고객 획득에서, 다시 오게 하는 힘으로.',
-     '획득한 고객이 계속 머물 이유를 만들어야 해요.',
+    ('07', '리:텐션 전략', 'Hold on to Your Customers! Retention Strategy', '경쟁의 중심이 신규 고객에서, 다시 오게 하는 힘으로.',
+     '신규 고객보다, 지금 고객이 계속 머물 이유를 만들어야 해요.',
      [('dawn', '역체감 리텐션', '떠나 봐야 아는 가치. 새벽배송을 한번 쓰면 돌아가기 어려워요.'),
-      ('ritz', '환대 리텐션', '잃어버린 인형의 "호텔 휴가" 사진을 보내 준 리츠칼튼.')],
+      ('quote:새 맛을 낼수록<br>오리지널이<br>더 잘 팔린다', '프링글스의 변주', '새 맛을 계속 내는 이유는, 그럴 때마다 오리지널이 더 팔리기 때문이래요.')],
      '쿠폰으로 붙잡기보다 <b>돌아올 이유</b>를. 만족한 고객이 다음 고객을 데려와요.'),
     ('08', '휴먼엣지', 'Every AI Needs the Human Edge', 'AI가 결과를 쉽게 만드는 시대, 사람의 경험·손길·시간이 차별화가 된다.',
      'AI가 답을 늘릴수록, 사람이 고르는 기준이 남아요.',
@@ -97,43 +99,51 @@ KW = [
      '고객의 안목을 인정해 주세요. <b>"안목 있다"</b>가 가장 큰 칭찬이에요.'),
 ]
 
+def chips(ks):
+    return '<div class="chips">' + ''.join(f'<span>{k}</span>' for k in ks) + '</div>'
+
+
 cards = [card(1, 'TREND KOREA 2027 &nbsp;/&nbsp; THE OVERVIEW', '''
   <div class="lab big">AN EDITORIAL NOTE · 2027</div>
   <h1>트렌드 코리아 2027<br><span>한눈에</span></h1>
-  <p class="def">10개 키워드를 다 듣고 나니,<br>한 문장이 계속 남았어요.</p>
+  <p class="def">10개 키워드를 다 듣고 나니,<br>결국 <b class="u">두 문장</b>이 남았어요.</p>
   <div class="ph hero">''' + '<img src="../img/flock.png" alt="">' + '''</div>
-  <div class="banner">도구는 쌓아졌고, 이제 <b>선택이 실력</b>이에요.</div>'''),
-         card(2, 'THE BIG PICTURE', '''
-  <div class="lab big">ONE MESSAGE / FOUR CHANGES</div>
-  <h2>AI는 이제 기본값.<br><span>차이는 어떻게 쓰느냐예요.</span></h2>
-  <p class="def">2026년 1번 키워드였던 AI가, 1년 만에 전기처럼 당연해졌어요.</p>
-  <div class="axes">
-    <div><em>01</em><b>사회</b><i>권태사회</i><p>넘치는 선택에서 의미 찾기</p></div>
-    <div><em>02</em><b>개인</b><i>라이프 ROI · 저장인류 · 하프시그널</i><p>삶의 시간과 우선순위를 다시 보기</p></div>
-    <div><em>03</em><b>조직</b><i>바이브 워킹 · 폼팩터 시프트 · 리:텐션</i><p>일하고 만들고 관계 맺는 방식 바꾸기</p></div>
-    <div class="on"><em>04</em><b>대응</b><i>휴먼엣지 · 해봄경제 · 안목자본</i><p>직접 해 보고, 끝내 사람이 선택하기</p></div>
+  <div class="banner">넘겨서 두 문장부터 확인해 보세요 <b>→</b></div>'''),
+         card(2, 'MESSAGE 01 / 02', '''
+  <div class="msg">
+    <div class="lab big">첫 번째 문장</div>
+    <h2 class="big">풍요의 시대에는<br><span>결핍보다 과잉이</span><br>문제가 돼요.</h2>
+    <p class="lead">더 많은 선택지보다<br>의미 있는 경험과 <b>선별</b>이 중요해져요.</p>
+    <div class="lab">이 문장을 풀어주는 키워드</div>''' + chips(['권태사회', '라이프 ROI', '저장인류', '안목자본']) + '''
   </div>'''),
-         card(3, 'THE TEN KEYWORDS', '''
-  <div class="lab big">A · L · P · H · A — S · H · E · E · P</div>
-  <h2>2027 키워드 10</h2>
-  <p class="def">무리에서 가장 먼저 변화를 시도하는 양, ALPHA SHEEP.</p>
-  <div class="grid10">''' + ''.join(
-             f'<div class="{"on" if on else ""}"><em>{a}</em><b>{k}</b><p>{d}</p></div>' for a, k, d, on in [
-                 ('A', '권태사회', '넘치는 자극 속 무료함', 0), ('S', '바이브 워킹', '사람과 AI가 한 팀처럼', 0),
-                 ('L', '라이프 ROI', '삶의 모든 선택을 수익률로', 0), ('H', '리:텐션 전략', '붙잡기보다 돌아올 이유를', 0),
-                 ('P', '폼팩터 시프트', '기능은 그대로, 형태를 바꾸다', 0), ('E', '휴먼엣지', '결과보다 사람의 흔적', 1),
-                 ('H', '해봄경제', '완벽보다 완료, 일단 해본다', 1), ('E', '하프시그널', '갱년기는 후반전의 신호', 0),
-                 ('A', '저장인류', '일단 저장하고 나중에 고른다', 0), ('P', '안목자본', '좋은 것을 알아보는 눈', 1)]) + '</div>')]
+         card(3, 'MESSAGE 02 / 02', '''
+  <div class="msg">
+    <div class="lab big">두 번째 문장</div>
+    <h2 class="big">AI는 기본값,<br><span>성과는 일하는 방식을</span><br>바꿀 때 생겨요.</h2>
+    <p class="lead">도구를 들이는 것과<br>일과 조직을 다시 설계하는 건 <b>별개의 과제</b>예요.</p>
+    <div class="lab">이 문장을 풀어주는 키워드</div>''' + chips(['바이브 워킹', '해봄경제', '폼팩터 시프트', '리:텐션 전략', '휴먼엣지', '하프시그널']) + '''
+  </div>
+  <div class="banner">이제 10개 키워드를 하나씩 풀어볼게요 <b>→</b></div>''')]
 cards += [kw(i, *k) for i, k in enumerate(KW, 4)]
 cards.append(card(14, 'WHAT STAYS AFTER THE TALK', '''
   <div class="lab big">AFTER THE TALK</div>
   <h2 class="quote">"어제의 해결책이<br><span>오늘의 문제점이다."</span></h2>
-  <p class="def">과거의 성공 공식을 흘려보내는 용기. 강연의 마지막 문장이었어요.</p>
-  <div class="qa"><b>Q. 오래된 브랜드는 어떻게 올드해지지 않을까?</b>
-    <p>프링글스는 새 맛을 낼 때마다 오리지널이 더 팔린대요. 변주를 두려워하지 않기.</p></div>
-  <div class="qa sky"><b>Q. K-뷰티는 왜 다시 주목받을까?</b>
+  <p class="def">과거의 성공 공식을 흘려보내는 용기.<br>강연의 마지막 문장이었어요.</p>
+  <div class="qa sky"><b>Q. K-브랜드는 왜 다시 주목받을까?</b>
     <p>한류가 아니라 제품 그 자체, 특히 속도. 인디 브랜드는 3개월마다 신제품을 내요.</p></div>
   <div class="banner">좋은 브랜드일수록, <b>계속 다시 질문</b>해야 해요.</div>'''))
+cards.append(card(15, 'SAVE THIS PAGE', '''
+  <div class="lab big">저장용 한 장 요약</div>
+  <h2>2027 키워드 10</h2>
+  <p class="def">무리에서 가장 먼저 변화를 시도하는 양, ALPHA SHEEP.</p>
+  <div class="grid10">''' + ''.join(
+    f'<div><em>{a}</em><b>{k}</b><p>{d}</p></div>' for a, k, d in [
+        ('A', '권태사회', '넘치는 자극 속 무료함'), ('S', '바이브 워킹', '사람과 AI가 한 팀처럼'),
+        ('L', '라이프 ROI', '삶의 모든 선택을 수익률로'), ('H', '리:텐션 전략', '붙잡기보다 돌아올 이유를'),
+        ('P', '폼팩터 시프트', '기능은 그대로, 형태를 바꾸다'), ('E', '휴먼엣지', '결과보다 사람의 흔적'),
+        ('H', '해봄경제', '완벽보다 완료, 일단 해본다'), ('E', '하프시그널', '갱년기는 후반전의 신호'),
+        ('A', '저장인류', '일단 저장하고 나중에 고른다'), ('P', '안목자본', '좋은 것을 알아보는 눈')]) + '''</div>
+  <div class="banner">내년 기획 전에 다시 꺼내 보세요 <b>📌</b></div>'''))
 
 open('full.html', 'w').write('''<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>full</title>
 <link rel="stylesheet" href="../fonts/noto.css"><link rel="stylesheet" href="../fonts/extra.css">
